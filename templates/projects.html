@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+
+{% block content%}
+
+      <div class="container">
+	  
+	  <br><br><br><br><br>
+
+	  <div class="row">
+		<div class="span12">
+			<h1>In-Progress Projects</h1>
+			<h4>Expect new developments.</h4>
+			<br>
+		</div>
+	  </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+		{% for project in inprogress %}
+			{% include "projectcard.html" %}
+		{% endfor %}
+      </div>
+	  
+	  <hr>
+	  
+	   <div class="row">
+		<div class="span12">
+			<h1>Completed Projects</h1>
+			<br>
+		</div>
+	  </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+		{% for project in completed %}
+			{% include "projectcard.html" %}
+		{% endfor %}
+      </div>
+
+	  <hr>
+	  
+	   <div class="row">
+		<div class="span12">
+			<h1>Archived Projects</h1>
+			<h4>Starting from sixth grade.</h4>
+			<br>
+		</div>
+	  </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+		{% for project in archived %}
+			{% include "projectcard.html" %}
+		{% endfor %}
+      </div>
+	  
+       {% include "footer.html" %}
+    </div> <!-- /container -->
+
+
+{% endblock %}
+
+{% block title%}All Projects{% endblock %}

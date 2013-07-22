@@ -1,0 +1,47 @@
+{% extends "main.html" %}
+
+{% block content%}
+
+  <div class="container">
+	  
+	  <br><br><br><br><br>
+
+
+	   <div class="row">
+ 		<div class="span6">
+			<h1>About Me</h1>
+			<br>
+Programmer. Gamer. Delusions of grandeur.
+Currently attends Stanford University as a Freshman.
+
+<br><br>
+		</div>
+
+		<div class="span6">
+			<h1>Contact Information</h1>
+			<br>
+
+<h3>Email</h3>
+
+<a href="http://www.google.com/recaptcha/mailhide/d?k=01fbBnFCfwAqIixmCtcrToOg==&c=vANd58lXbwMz16ecZyymwsI7TgUiI1-AHgSMamiBeeo=">Click to view my email address.</a>
+
+<h3>Twitter</h3>
+<a href="https://twitter.com/frr171" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @frr171</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<h3>Facebook</h3>
+<!-- Facebook Badge START --><br/><a href="https://www.facebook.com/pages/Varun-Ramesh/127772243743" target="_TOP" title="Varun Ramesh"><img src="https://badge.facebook.com/badge/127772243743.5652.187426936.png" style="border: 0px;" /></a><br/><!-- Facebook Badge END -->
+
+
+
+		</div>
+
+
+	  </div>
+
+       {% include "footer.html" %}
+    </div> <!-- /container -->
+
+{% endblock %}
+
+{% block title%} About Page / Contact Information {% endblock %}

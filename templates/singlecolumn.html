@@ -1,0 +1,26 @@
+{% extends "project.html" %}
+
+{% block projectcontent %}
+<div class="row-fluid" >
+
+<div class="span1"></div>
+
+<div class="span7" style="background-color: #eeeeee; border-radius: 6px; ">
+	<div style="margin:0px 50px 50px 50px;">
+	<br>
+	{{ column1 }}
+	<br><br>
+	
+	{% include "projectcomments.html" %}
+	</div>
+
+</div>
+
+<div class="span3">
+		<h1>News About This Project</h1>
+		{% include "recentblog.html" %}
+</div>
+
+</div>
+
+{% endblock %}

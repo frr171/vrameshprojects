@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{% block content%}
+
+{% autoescape off %}
+
+
+ <div class="container-fluid">
+	<br><br><br><br><br>
+	
+      
+	  {% block projectcontent %}
+
+	  
+	  {% endblock %}
+
+	  <br><br>
+	  
+
+      {% include "footer.html" %}
+	  
+	 
+
+    </div> <!-- /container -->
+	
+{% endautoescape %}
+
+{% endblock %}
+
+{% block title%} {{ project.title}} {% endblock %}

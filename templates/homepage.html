@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+
+{% block content%}
+
+	{% autoescape off %}
+	{{ carousel }}
+	{% endautoescape %}
+
+  <div class="container marketing">
+
+ 	   <div class="row">
+		<div class="span12">
+			<h1>Featured Projects</h1>
+			<br>
+		</div>
+	  </div>
+	  
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+	
+	{% for project in featured.projects.all %}
+		{% include "projectcard.html" %}
+	{% endfor %}
+
+  </div><!-- /.row -->
+  
+  <hr>
+  
+  <div class="row">
+	<div class="span8">
+		<h1>Recent Blog Entries</h1>
+		{% include "recentblog.html" %}
+	</div>
+	
+	<div class="span4">
+		{% include "badges.html" %}
+	</div>
+   </div><!-- /.row -->
+  
+  
+
+  {% include "footer.html" %}
+  
+
+
+</div><!-- /.container -->
+
+{% endblock %}
