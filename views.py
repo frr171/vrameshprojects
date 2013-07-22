@@ -91,15 +91,30 @@ def page(request, page_name):
 		return HttpResponse(template.render(context))
 	else:
 		return HttpResponse( "The page named '" + page_name + "' could not be found.")
+		
+def split(list, n = 3):
+	returnval = []
+	
+	currentset = []
+	for item in list:
+		if len(currentset) >= n:
+			returnval.append(currentset)
+			currentset = []
+		
+		currentset.append(item)
+		
+	returnval.append(currentset)
+	
+	return returnval
 
 #@cache_page( cache_length )
 def projects(request):
 	context = {}
 	context['projects'] = True
 	
-	context['inprogress'] = Project.objects.filter(status=Project.INPROGRESS).order_by('-year')
-	context['completed'] = Project.objects.filter(status=Project.COMPLETED).order_by('-year')
-	context['archived'] = Project.objects.filter(status=Project.ARCHIVED).order_by('-year')
+	context['inprogress'] = split( Project.objects.filter(status=Project.INPROGRESS).order_by('-year') )
+	context['completed'] = split( Project.objects.filter(status=Project.COMPLETED).order_by('-year') )
+	context['archived'] = split( Project.objects.filter(status=Project.ARCHIVED).order_by('-year') )
 	
 	return render(request, 'projects.html', context)
 

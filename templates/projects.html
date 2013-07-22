@@ -15,11 +15,15 @@
 	  </div>
 
       <!-- Example row of columns -->
-      <div class="row">
-		{% for project in inprogress %}
-			{% include "projectcard.html" %}
+     
+		{% for row in inprogress %}
+			<div class="row">
+			{% for project in row %}
+				{% include "projectcard.html" %}
+			{% endfor %}
+			</div>
 		{% endfor %}
-      </div>
+      
 	  
 	  <hr>
 	  
@@ -31,11 +35,15 @@
 	  </div>
 
       <!-- Example row of columns -->
-      <div class="row">
-		{% for project in completed %}
-			{% include "projectcard.html" %}
+      
+		{% for row in completed %}
+		<div class="row">
+			{% for project in row %}
+				{% include "projectcard.html" %}
+			{% endfor %}
+		</div>
 		{% endfor %}
-      </div>
+      
 
 	  <hr>
 	  
@@ -48,11 +56,15 @@
 	  </div>
 
       <!-- Example row of columns -->
-      <div class="row">
-		{% for project in archived %}
-			{% include "projectcard.html" %}
-		{% endfor %}
-      </div>
+      
+	{% for row in archived %}
+		<div class="row">
+			{% for project in row %}
+				{% include "projectcard.html" %}
+			{% endfor %}
+		</div>
+	{% endfor %}
+      
 	  
        {% include "footer.html" %}
     </div> <!-- /container -->
