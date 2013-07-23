@@ -1,4 +1,4 @@
 <h4>Categories:</h4>
 {% for category in project.tags.all %}
-	<b><a href="{% url 'projects:category' category.name %}" >{{ category.title }}</a></b>
+	<b><a href="{% url 'projects:category' category.name %}" >{{ category.title }}</a></b>&nbsp;&nbsp;&nbsp;
 {% endfor %}
