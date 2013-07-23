@@ -10,13 +10,18 @@
 	
      <div class="row">
 	 
-	 <div class="span12">
+	 <div class="span10">
 	 
 	<h1> {{ category.title }} </h1>
 	<h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ category.description }} </h3>
+	
 	<hr>
 	<br>
 	
+	</div>
+	
+	<div class="span2">
+		<a class="btn btn-primary" href=" {% url 'projects:categories' %} ">See all categories.</a>
 	</div>
 	
 	</div>
