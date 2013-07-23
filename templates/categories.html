@@ -1,0 +1,43 @@
+{% extends "project.html" %}
+
+{% block projectcontent %}
+<div class="row-fluid" >
+
+{% if blog %}
+<div class="span1"></div>
+{% else %}
+<div class="span2"></div>
+{% endif %}
+
+<div class="span7" style="background-color: #eeeeee; border-radius: 6px; ">
+	<div style="margin:0px 20px 20px 20px;">
+	<br>
+
+	<h1>All Categories</h1>
+	<hr>
+	<center>
+	
+	{% for category in categories %}
+	
+	<h3><a href="{% url 'projects:category' category.name %}">{{ category.title }}</a></h3>
+	
+	{% endfor %}
+	
+	</center>
+	
+	<br><br>
+
+	</div>
+
+</div>
+
+{% if blog %}
+<div class="span3">
+		<h1>News About This Project</h1>
+		{% include "recentblog.html" %}
+</div>
+{% endif %}
+
+</div>
+
+{% endblock %}

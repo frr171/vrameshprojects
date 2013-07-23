@@ -13,6 +13,7 @@ urlpatterns = patterns('',
 	
 	
 	url(r'^categories/$', views.categories, name='categories'),
+	url(r'^categories/(?P<category_name>[a-zA-Z0-9_.-]+)', views.category, name='category'),
 	
 	url(r'^(?P<page_name>[a-zA-Z0-9_.-]+)', views.page, name='page')
 )

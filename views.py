@@ -120,7 +120,27 @@ def projects(request):
 
 #@cache_page( cache_length )
 def categories(request):
-	return HttpResponse("All Categories")
+	context = {}
+	context['projects'] = True
+	
+	context['categories'] = Category.objects.all()
+	return render(request, 'categories.html', context)
+	
+#@cache_page( cache_length )
+def category(request, category_name):
+	results = Category.objects.filter(name=category_name)
+	
+	context = {}
+	context['projects'] = True
+	
+	if len(results) > 0:
+		category = results[0]
+		context['category'] = category
+		context['projects'] = split( Project.objects.filter(tags__name=category_name).order_by('-year') )
+		
+		return render(request, 'category.html', context)
+	else:
+		return HttpResponse( "The category named '" + category_name + "' could not be found.")
 	
 #Import order must be Categories, Projects, then Lists. Pages are independant
 def export(request, element):

@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+
+{% block content%}
+
+{% autoescape off %}
+
+
+ <div class="container">
+	<br><br><br><br><br>
+	
+     <div class="row">
+	 
+	 <div class="span12">
+	 
+	<h1> {{ category.title }} </h1>
+	<h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ category.description }} </h3>
+	<hr>
+	<br>
+	
+	</div>
+	
+	</div>
+	
+	 			{% for row in projects %}
+			<div class="row">
+			{% for project in row %}
+				{% include "projectcard.html" %}
+			{% endfor %}
+			</div>
+			<br>
+		{% endfor %}
+
+	  <br><br>
+	  
+
+      {% include "footer.html" %}
+	  
+	 
+
+    </div> <!-- /container -->
+	
+{% endautoescape %}
+
+{% endblock %}
+
+{% block title%} {{ project.title}} {% endblock %}
