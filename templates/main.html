@@ -21,5 +21,15 @@
 	
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	
+	<script src="{% static 'js/jquery.fitvids.js' %}"></script>
+	
+	<script>
+	  $(document).ready(function(){
+		// Target your .container, .wrapper, .post, etc.
+		$("div").fitVids();
+	  });
+	</script>
+	
   </body>
 </html>
