@@ -11,7 +11,7 @@ class ListAdmin(admin.ModelAdmin):
     }
 
 class ProjectAdmin(admin.ModelAdmin):
-	list_display = ('title', 'description', 'year')
+	list_display = ('title', 'description', 'visible', 'year')
 	list_filter = ['year']
 	
 	#Set the tags field to be checkboxes

@@ -112,9 +112,9 @@ def projects(request):
 	context = {}
 	context['projects'] = True
 	
-	context['inprogress'] = split( Project.objects.filter(status=Project.INPROGRESS).order_by('-year') )
-	context['completed'] = split( Project.objects.filter(status=Project.COMPLETED).order_by('-year') )
-	context['archived'] = split( Project.objects.filter(status=Project.ARCHIVED).order_by('-year') )
+	context['inprogress'] = split( Project.objects.filter(status=Project.INPROGRESS, visible=True).order_by('-year') )
+	context['completed'] = split( Project.objects.filter(status=Project.COMPLETED, visible=True).order_by('-year') )
+	context['archived'] = split( Project.objects.filter(status=Project.ARCHIVED, visible=True).order_by('-year') )
 	
 	return render(request, 'projects.html', context)
 
@@ -136,7 +136,7 @@ def category(request, category_name):
 	if len(results) > 0:
 		category = results[0]
 		context['category'] = category
-		context['projects'] = split( Project.objects.filter(tags__name=category_name).order_by('-year') )
+		context['projects'] = split( Project.objects.filter(tags__name=category_name, visible=True).order_by('-year') )
 		
 		return render(request, 'category.html', context)
 	else:
