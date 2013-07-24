@@ -2,3 +2,5 @@
 {% for category in project.tags.all %}
 	<b><a href="{% url 'projects:category' category.name %}" >{{ category.title }}</a></b>&nbsp;&nbsp;&nbsp;
 {% endfor %}
+<h4>Year:</h4>
+<b>{{ project.year }}</b>
