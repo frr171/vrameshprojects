@@ -114,6 +114,9 @@ def projects(request):
 	
 	context['inprogress'] = split( Project.objects.filter(status=Project.INPROGRESS, visible=True).order_by('-year') )
 	context['completed'] = split( Project.objects.filter(status=Project.COMPLETED, visible=True).order_by('-year') )
+	
+	context['graveyard'] = split( Project.objects.filter(status=Project.GRAVEYARD, visible=True).order_by('-year') )
+	
 	context['archived'] = split( Project.objects.filter(status=Project.ARCHIVED, visible=True).order_by('-year') )
 	
 	return render(request, 'projects.html', context)

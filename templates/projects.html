@@ -2,6 +2,26 @@
 
 {% block content%}
 
+<script>
+
+function showhidearchived()
+{
+	var archived = document.getElementById('archived');
+	var archivedbutton = document.getElementById('archivedbutton');
+	
+	archived.hidden = !archived.hidden
+	
+	if( archived.hidden )
+	{
+		archivedbutton.innerHTML = "Show Projects"
+	}
+	else
+	{
+		archivedbutton.innerHTML = "Hide Projects"
+	}
+}
+</script>
+
       <div class="container">
 	  
 	  <br><br><br><br><br>
@@ -45,19 +65,49 @@
 		</div>
 		<br>
 		{% endfor %}
+		
+		<hr>
+	  
+	   <div class="row">
+		<div class="span10">
+			<h1>The Graveyard</h1>
+			<h4>Where ideas go to die.</h4>
+			<br>
+		</div>
+	  </div>
+	  
+		<!-- Example row of columns -->
+		<div id="graveyard">
+		  
+		{% for row in graveyard %}
+			<div class="row">
+				{% for project in row %}
+					{% include "projectcard.html" %}
+				{% endfor %}
+			</div>
+			<br>
+		{% endfor %}
+		
+		</div>
       
 
 	  <hr>
 	  
 	   <div class="row">
-		<div class="span12">
+		<div class="span10">
 			<h1>Archived Projects</h1>
 			<h4>Starting from sixth grade.</h4>
 			<br>
 		</div>
+		
+		<div class="span2">
+			<br>
+			<a id="archivedbutton" onclick="showhidearchived()" class="btn btn-large btn-primary">Show Projects</a>
+		</div>
 	  </div>
 
       <!-- Example row of columns -->
+	  <div id="archived" hidden="true">
       
 	{% for row in archived %}
 		<div class="row">
@@ -67,6 +117,10 @@
 		</div>
 		<br>
 	{% endfor %}
+	
+	</div>
+	
+
       
 	  
        {% include "footer.html" %}
