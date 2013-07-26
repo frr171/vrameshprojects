@@ -1,11 +1,13 @@
 from django.conf.urls import patterns, url
 
 from projects import views
+from projects import backup
 
 urlpatterns = patterns('',
     url(r'^$', views.home, name='home'),
 	
-	url(r'^export/(?P<element>[a-zA-Z0-9_.-]+)', views.export, name='export'),
+	url(r'^export/(?P<element>[a-zA-Z0-9_.-]+)', backup.export, name='export'),
+	url(r'^import/(?P<element>[a-zA-Z0-9_.-]+)', backup.importload, name='import'),
 	
 	url(r'^projects/$', views.projects, name='projects'),
 	
