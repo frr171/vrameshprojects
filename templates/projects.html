@@ -42,7 +42,7 @@ function showhidearchived()
 				{% include "projectcard.html" %}
 			{% endfor %}
 			</div>
-			<br>
+			 <!-- <br> -->
 		{% endfor %}
       
 	  
@@ -63,7 +63,7 @@ function showhidearchived()
 				{% include "projectcard.html" %}
 			{% endfor %}
 		</div>
-		<br>
+		<!-- <br> -->
 		{% endfor %}
 		
 		<hr>
@@ -71,7 +71,7 @@ function showhidearchived()
 	   <div class="row">
 		<div class="span10">
 			<h1>The Graveyard</h1>
-			<h4>Where ideas go to die.</h4>
+			<h4>Resurrection is always a possibility.</h4>
 			<br>
 		</div>
 	  </div>
@@ -85,7 +85,7 @@ function showhidearchived()
 					{% include "projectcard.html" %}
 				{% endfor %}
 			</div>
-			<br>
+			<!-- <br> -->
 		{% endfor %}
 		
 		</div>
@@ -103,8 +103,10 @@ function showhidearchived()
 		<div class="span2">
 			<br>
 			<a id="archivedbutton" onclick="showhidearchived()" class="btn btn-large btn-primary">Show Projects</a>
+			
 		</div>
 	  </div>
+
 
       <!-- Example row of columns -->
 	  <div id="archived" hidden="true">
@@ -115,7 +117,7 @@ function showhidearchived()
 				{% include "projectcard.html" %}
 			{% endfor %}
 		</div>
-		<br>
+		<!-- <br> -->
 	{% endfor %}
 	
 	</div>
