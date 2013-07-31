@@ -10,7 +10,7 @@ import json
 #Set cache_length. Only really necessary if you expect large amounts of traffic.
 cache_length = 60
 
-#@cache_page( cache_length )
+@cache_page( cache_length )
 def home(request):
 	context = {}
 	context['home'] = True
@@ -107,7 +107,7 @@ def split(list, n = 3):
 	
 	return returnval
 
-#@cache_page( cache_length )
+@cache_page( cache_length )
 def projects(request):
 	context = {}
 	context['projects'] = True
