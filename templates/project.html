@@ -16,6 +16,15 @@
 
 	  <br><br>
 	  
+	  {% if superuser %}
+	  <div class="row" >
+	   <div class="span10"></div>
+	   
+	  <div class="span2">
+	  <a href="/admin/projects/project/{{ project.id }}/">Edit this Project</a>
+	  </div>
+	  </div>
+	  {% endif %}
 
       {% include "footer.html" %}
 	  

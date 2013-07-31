@@ -41,6 +41,9 @@ def project(request, project_name):
 	context = {}
 	context['projects'] = True
 	
+	#Tell template if this is a superuser
+	context['superuser'] = request.user.is_authenticated() and request.user.is_superuser
+	
 	results = Project.objects.filter(name=project_name)
 	
 	if len(results) > 0:
