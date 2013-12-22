@@ -7,13 +7,25 @@
 	{% endautoescape %}
 
   <div class="container marketing">
-
- 	   <div class="row">
-		<div class="span12">
+  
+	<style>
+	.btn-lg {
+		padding: 10px 16px;
+		font-size: 18px;
+		line-height: 1.33;
+		border-radius: 6px;
+	}
+	</style>
+ 	<div class="row">
+		<div class="span10">
 			<h1>Featured Projects</h1>
 			<br>
 		</div>
-	  </div>
+		<div class="span2">
+			<br>
+			<a class="btn btn-primary btn-lg" href=" {% url 'projects:projects' %} ">More projects &raquo;</a>
+		</div>
+	</div>
 	  
   <!-- Three columns of text below the carousel -->
   <div class="row">
