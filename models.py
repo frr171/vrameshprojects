@@ -31,11 +31,13 @@ class Project(models.Model):
 	SINGLECOLUMN = 'SC'
 	TWOCOLUMN = 'TC'
 	REDIRECT = 'RD'
+	MARKDOWN = 'MD'
 	
 	TEMPLATE_TYPES = (
     (SINGLECOLUMN, 'Single Column'),
     (TWOCOLUMN, 'Two Column'),
-	(REDIRECT, 'Redirect')
+	(REDIRECT, 'Redirect'),
+	(MARKDOWN, 'Markdown')
 	)
 	
 	templatetype = models.CharField( max_length=2, choices=TEMPLATE_TYPES )

@@ -6,6 +6,7 @@ from django.views.decorators.cache import cache_page
 import rss, globals, re
 import django.template
 import json
+import markdown
 
 #Set cache_length. Only really necessary if you expect large amounts of traffic.
 cache_length = 60
@@ -59,6 +60,11 @@ def project(request, project_name):
 		#Single Column Template
 		if project.templatetype == Project.SINGLECOLUMN:
 			context['column1'] = project.data
+			return render(request, 'singlecolumn.html', context)
+			
+		#Markdown Single Column
+		if project.templatetype == Project.MARKDOWN:
+			context['column1'] = markdown.markdown(project.data)
 			return render(request, 'singlecolumn.html', context)
 		
 		#Two Column Template
