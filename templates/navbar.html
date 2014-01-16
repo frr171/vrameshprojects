@@ -1,29 +1,22 @@
-    <!-- NAVBAR
-    ================================================== -->
-    <div class="navbar-wrapper">
-      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
-      <div class="container">
-
-        <div class="navbar navbar-inverse">
-          <div class="navbar-inner">
-            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="{% url 'projects:home' %}">Varun Ramesh</a>
-            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-            <div class="nav-collapse collapse">
-              <ul class="nav">
-                <li {% if home %} class="active" {% endif %} ><a href="{% url 'projects:home' %}">Home</a></li>
-                <li {% if projects %} class="active" {% endif %} ><a href="{% url 'projects:projects' %}">Projects</a></li>
-                <li {% if blogtab %} class="active" {% endif %} ><a href="http://rvarun.tumblr.com/">Blog</a></li>
-				<li {% if contact %} class="active" {% endif %} ><a href="/about">About</a></li>
-              </ul>
-            </div><!--/.nav-collapse -->
-          </div><!-- /.navbar-inner -->
-        </div><!-- /.navbar -->
-
-      </div> <!-- /.container -->
-    </div><!-- /.navbar-wrapper -->
+<!-- Docs master nav -->
+<header class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+                <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                        </button>
+						<a class="navbar-brand" href="{% url 'projects:home' %}">Varun Ramesh</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                        <ul class="nav navbar-nav">
+							<li {% if home %} class="active" {% endif %} ><a href="{% url 'projects:home' %}">Home</a></li>
+							<li {% if projects %} class="active" {% endif %} ><a href="{% url 'projects:projects' %}">Projects</a></li>
+							<li {% if blogtab %} class="active" {% endif %} ><a href="http://rvarun.tumblr.com/">Blog</a></li>
+							<li {% if contact %} class="active" {% endif %} ><a href="/about">About</a></li>
+                        </ul>
+                </nav>
+        </div>
+</header>

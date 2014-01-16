@@ -1,11 +1,15 @@
 {% extends "main.html" %}
 
-{% block content%}
+{% load staticfiles %}
 
+{% block content%}
+	<link href="{% static 'css/carousel.css' %}" rel="stylesheet" media="screen"></link>
+	
 	{% autoescape off %}
 	{{ carousel }}
 	{% endautoescape %}
 
+	{% comment %}
   <div class="container marketing">
   
 	<style>
@@ -56,7 +60,7 @@
   
 
   {% include "footer.html" %}
-  
+  {% endcomment %}
 
 
 </div><!-- /.container -->
