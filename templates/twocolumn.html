@@ -1,47 +1,32 @@
 {% extends "project.html" %}
 
 {% block projectcontent %}
-<div class="row-fluid" >
+<div class="row" >
 
+<div class="col-md-8">
 
-<div class="span1"></div>
+	<div class="well">
 
-<div class="span6">
+		<br>
+		{{ column1 }}
+	<br><br><hr>
 
-<div  style="background-color: #eeeeee; border-radius: 6px; ">
-	<div style="margin:0px 20px 20px 20px;">
-	<br>
-	{{ column1 }}
-<br><br><hr>
-	
-	
-	
-	{% include "projectcomments.html" %}
+		{% include "projectcomments.html" %}
+
 	</div>
-
-</div>
 
 	<br>
 	{% include "categorylist.html" %}
 	
 </div>
 
-<div class="span4" style="background-color: #eeeeee; border-radius: 6px; ">
-	<div style="margin:0px 20px 20px 20px;">
-	<br>
-	{{ column2 }}
-	<br><br>
+<div class="col-md-4">
+	<div class="well">
+		<br>
+		{{ column2 }}
+		<br><br>
 	</div>
-
 </div>
-
-
-<!--
-<div class="span3">
-		<h1>News About This Project</h1>
-		{% include "recentblog.html" %}
-</div>
--->
 
 </div>
 

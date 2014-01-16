@@ -1,41 +1,37 @@
 {% extends "project.html" %}
 
 {% block projectcontent %}
-<div class="row-fluid" >
+<div class="row" >
 
-{% if blog %}
-<div class="span1"></div>
-{% else %}
-<div class="span3"></div>
-{% endif %}
+	{% if blog %}
+	{% else %}
+	<div class="col-md-1"></div>
+	{% endif %}
 
+	{% if blog %}
+	<div class="col-md-8">
+	{% else %}
+	<div class="col-md-10">
+	{% endif %}
 
-<div class="span6">
-
-<div style="background-color: #eeeeee; border-radius: 6px; ">
-	<div style="margin:0px 20px 20px 20px;">
-	<br>
-	{{ column1 }}
-<br><br><hr>
-	
-	
-	
-	{% include "projectcomments.html" %}
+		<div class="well">
+			<br>
+			{{ column1 }}
+			<br><br><hr>
+			{% include "projectcomments.html" %}
+		</div>
+		{% include "categorylist.html" %}
 	</div>
 
-</div>
-
-	<br>
-	{% include "categorylist.html" %}
-
-</div>
-
-{% if blog %}
-<div class="span3">
-		<h1>News About This Project</h1>
-		{% include "recentblog.html" %}
-</div>
-{% endif %}
+	{% if blog %}
+	<div class="col-md-4">
+			<h1>News About This Project</h1>
+			{% include "recentblog.html" %}
+	</div>
+	{% else %}
+	<div class="col-md-1"></div>
+	{% endif %}
+	
 
 </div>
 
