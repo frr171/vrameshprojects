@@ -3,6 +3,23 @@
 	margin-bottom: 0px;
 }
 
+/* Project Cards */
+.card {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Blog Embeds */
+#blog img, #blog iframe {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -24,16 +41,6 @@
 	background-size:cover;
 	background-position: 50% 50%;
 }
-
-.card {
-	padding-top: 10px;
-	padding-bottom: 10px;
-
-	text-align: center;
-	margin-left: auto;
-  margin-right: auto;
-}
-
 
 .carousel-caption h1 {
 	font-size: 300%;
