@@ -12,10 +12,10 @@
                 </div>
                 <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                         <ul class="nav navbar-nav">
-							<li {% if home %} class="active" {% endif %} ><a href="{% url 'projects:home' %}">Home</a></li>
-							<li {% if projects %} class="active" {% endif %} ><a href="{% url 'projects:projects' %}">Projects</a></li>
+							<li {% if home %} class="active" {% endif %} ><a href="{{ root_url }}{% url 'projects:home' %}">Home</a></li>
+							<li {% if projects %} class="active" {% endif %} ><a href="{{ root_url }}{% url 'projects:projects' %}">Projects</a></li>
 							<li {% if blogtab %} class="active" {% endif %} ><a href="http://rvarun.tumblr.com/">Blog</a></li>
-							<li {% if contact %} class="active" {% endif %} ><a href="/about">About</a></li>
+							<li {% if contact %} class="active" {% endif %} ><a href="{{ root_url }}/about">About</a></li>
                         </ul>
                 </nav>
         </div>
