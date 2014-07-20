@@ -114,21 +114,40 @@ def split(list, n = 3):
 
 	returnval.append(currentset)
 
-	return returnval
+	if len(list) > 0:
+		return returnval
+	else:
+		return None
 
 @cache_page( cache_length )
 def projects(request):
-	context = {}
-	context['projects'] = True
+	return render(request, 'projects.html', {
+		'projects' : True,
+		'inprogress' : split( Project.objects.filter(status=Project.INPROGRESS, visible=True).order_by('-year') ),
+		'completed' : split( Project.objects.filter(status=Project.COMPLETED, visible=True).order_by('-year') ),
+		'graveyard' : split( Project.objects.filter(status=Project.GRAVEYARD, visible=True).order_by('-year') )
+	})
 
-	context['inprogress'] = split( Project.objects.filter(status=Project.INPROGRESS, visible=True).order_by('-year') )
-	context['completed'] = split( Project.objects.filter(status=Project.COMPLETED, visible=True).order_by('-year') )
+@cache_page( cache_length )
+def archive(request):
+	projects_by_year = {}
+	years = []
 
-	context['graveyard'] = split( Project.objects.filter(status=Project.GRAVEYARD, visible=True).order_by('-year') )
+	for project in Project.objects.filter(status=Project.ARCHIVED, visible=True):
+		if project.year not in years:
+			years.append(project.year)
+			projects_by_year[project.year] = []
+		projects_by_year[project.year].append(project)
+	years.sort(reverse=True)
 
-	context['archived'] = split( Project.objects.filter(status=Project.ARCHIVED, visible=True).order_by('-year') )
 
-	return render(request, 'projects.html', context)
+	return render(request, 'archive.html', {
+		'projects' : True,
+		'years' : map(lambda x: {
+			"year" : x,
+			"projects" : split( projects_by_year[x] )
+		}, years)
+	})
 
 #@cache_page( cache_length )
 def categories(request):

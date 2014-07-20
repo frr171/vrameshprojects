@@ -2,113 +2,93 @@
 
 {% block content%}
 
-<script>
-
-function showhidearchived()
-{
-	var archived = document.getElementById('archived');
-	var archivedbutton = document.getElementById('archivedbutton');
-
-	archived.hidden = !archived.hidden
-
-	if( archived.hidden )
-	{
-		archivedbutton.innerHTML = "Show Projects"
-	}
-	else
-	{
-		archivedbutton.innerHTML = "Hide Projects"
-	}
-}
-</script>
-
       <div class="container">
 
 	  <br><br>
 
-	  <div class="row">
-		<div class="span12">
-			<h1>In-Progress Projects</h1>
-			<h4>Expect new developments.</h4>
-			<br>
-		</div>
-	  </div>
-
-      <!-- Example row of columns -->
-
-		{% for row in inprogress %}
-			<div class="row">
-			{% for project in row %}
-				{% include "projectcard.html" %}
-			{% endfor %}
+		{% if inprogress %}
+		  <div class="row">
+			<div class="col-sm-12">
+				<h1>In-Progress Projects</h1>
+				<h4>Expect new developments.</h4>
+				<br>
 			</div>
-			 <!-- <br> -->
-		{% endfor %}
+		  </div>
 
+	      <!-- Example row of columns -->
 
-	  <hr>
-
-	   <div class="row">
-		<div class="span12">
-			<h1>Completed Projects</h1>
-			<br>
-		</div>
-	  </div>
-
-      <!-- Example row of columns -->
-
-		{% for row in completed %}
-		<div class="row">
-			{% for project in row %}
-				{% include "projectcard.html" %}
-			{% endfor %}
-		</div>
-		<!-- <br> -->
-		{% endfor %}
-
-		<hr>
-
-	   <div class="row">
-		<div class="span10">
-			<h1>The Graveyard</h1>
-			<h4>Resurrection is always a possibility.</h4>
-			<br>
-		</div>
-	  </div>
-
-		<!-- Example row of columns -->
-		<div id="graveyard">
-
-		{% for row in graveyard %}
-			<div class="row">
+			{% for row in inprogress %}
+				<div class="row">
 				{% for project in row %}
 					{% include "projectcard.html" %}
 				{% endfor %}
+				</div>
+				 <!-- <br> -->
+			{% endfor %}
+	  	<hr>
+		{% endif %}
+
+		{% if completed %}
+			<div class="row">
+				<div class="col-sm-12">
+				<h1>Completed Projects</h1>
+				<br>
+				</div>
 			</div>
-			<!-- <br> -->
-		{% endfor %}
 
-		</div>
+			<!-- Example row of columns -->
+			{% for row in completed %}
+				<div class="row">
+					{% for project in row %}
+						{% include "projectcard.html" %}
+					{% endfor %}
+				</div>
+			{% endfor %}
 
+			<hr>
+		{% endif %}
 
-	  <hr>
+		{% if graveyard %}
+		  <div class="row">
+			<div class="col-sm-12">
+				<h1>The Graveyard</h1>
+				<h4>Resurrection is always a possibility.</h4>
+				<br>
+			</div>
+		  </div>
+
+			<!-- Example row of columns -->
+			<div id="graveyard">
+
+			{% for row in graveyard %}
+				<div class="row">
+					{% for project in row %}
+						{% include "projectcard.html" %}
+					{% endfor %}
+				</div>
+				<!-- <br> -->
+			{% endfor %}
+			</div>
+
+		  <hr>
+		{% endif %}
 
 	   <div class="row">
-		<div class="span10">
+		<div class="col-sm-8">
 			<h1>Archived Projects</h1>
-			<h4>Starting from sixth grade.</h4>
+			<h4>Smells a bit musty.</h4>
 			<br>
 		</div>
 
-		<div class="span2">
+		<div class="col-sm-4">
 			<br>
-			<a id="archivedbutton" onclick="showhidearchived()" class="btn btn-large btn-primary">Show Projects</a>
+			<a style="float: right; max-width:100%; margin-top: 21px;" id="archivedbutton" href="{% url 'projects:archive' %}" class="btn btn-large btn-primary">Show Projects</a>
 			<br>
 		</div>
 	  </div>
 
 
-      <!-- Example row of columns -->
+      <!-- Example row of columns
 	  <div id="archived" hidden="true">
 
 	{% for row in archived %}
@@ -117,10 +97,9 @@ function showhidearchived()
 				{% include "projectcard.html" %}
 			{% endfor %}
 		</div>
-		<!-- <br> -->
 	{% endfor %}
 
-	</div>
+</div> -->
 
 
 
