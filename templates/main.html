@@ -3,41 +3,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% block title%}Varun Ramesh's Site{% endblock %}</title>
-	
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title%}Varun Ramesh's Site{% endblock %}</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	
-    <!-- Bootstrap -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" media="screen"></link>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Bootstrap -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" media="screen"></link>
 	<link href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/yeti/bootstrap.min.css" rel="stylesheet">
-	
-	<link href="{% static 'css/global.css' %}" rel="stylesheet" media="screen"></link>
+
+  <!-- Global Styles -->
+	<link href="{% static 'css/custom.css' %}" rel="stylesheet" media="screen"></link>
   </head>
   <body>
-  
+
 	{% include "navbar.html" %}
-	
+
 	{% block content%}
 	{% endblock %}
-	
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-	
+
+
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
 	<!-- FitVids.js -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
-	
-	<script>
-	  $(document).ready(function(){
-		// Target your .container, .wrapper, .post, etc.
-		$("div").fitVids();
-		$("img").css("width", "100%");
-	  });
-	</script>
-	
+
+	<script src="{% static 'js/global.js' %}"></script>
+
 	{% include "analytics.html" %}
-	
+
   </body>
 </html>

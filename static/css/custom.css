@@ -1,0 +1,50 @@
+/* Navbar Positioning */
+.navbar {
+	margin-bottom: 0px;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+	height: 400px;
+	margin-bottom: 30px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+	z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+	height: 400px;
+	background-color: #777;
+	background-size:cover;
+	background-position: 50% 50%;
+}
+
+.card {
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	text-align: center;
+	margin-left: auto;
+  margin-right: auto;
+}
+
+
+.carousel-caption h1 {
+	font-size: 300%;
+	text-shadow: 2px 2px 5px rgba(0,0,0,1);
+}
+.carousel-caption .lead {
+	color: #e2e2e2;
+	font-size: 200%;
+  text-shadow: 2px 2px 2px rgba(0,0,0,1);
+}
+
+.carousel-caption .btn {
+	margin: 25px;
+}

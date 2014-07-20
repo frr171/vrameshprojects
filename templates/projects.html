@@ -8,9 +8,9 @@ function showhidearchived()
 {
 	var archived = document.getElementById('archived');
 	var archivedbutton = document.getElementById('archivedbutton');
-	
+
 	archived.hidden = !archived.hidden
-	
+
 	if( archived.hidden )
 	{
 		archivedbutton.innerHTML = "Show Projects"
@@ -23,8 +23,8 @@ function showhidearchived()
 </script>
 
       <div class="container">
-	  
-	  <br><br><br><br><br>
+
+	  <br><br>
 
 	  <div class="row">
 		<div class="span12">
@@ -35,7 +35,7 @@ function showhidearchived()
 	  </div>
 
       <!-- Example row of columns -->
-     
+
 		{% for row in inprogress %}
 			<div class="row">
 			{% for project in row %}
@@ -44,10 +44,10 @@ function showhidearchived()
 			</div>
 			 <!-- <br> -->
 		{% endfor %}
-      
-	  
+
+
 	  <hr>
-	  
+
 	   <div class="row">
 		<div class="span12">
 			<h1>Completed Projects</h1>
@@ -56,7 +56,7 @@ function showhidearchived()
 	  </div>
 
       <!-- Example row of columns -->
-      
+
 		{% for row in completed %}
 		<div class="row">
 			{% for project in row %}
@@ -65,9 +65,9 @@ function showhidearchived()
 		</div>
 		<!-- <br> -->
 		{% endfor %}
-		
+
 		<hr>
-	  
+
 	   <div class="row">
 		<div class="span10">
 			<h1>The Graveyard</h1>
@@ -75,10 +75,10 @@ function showhidearchived()
 			<br>
 		</div>
 	  </div>
-	  
+
 		<!-- Example row of columns -->
 		<div id="graveyard">
-		  
+
 		{% for row in graveyard %}
 			<div class="row">
 				{% for project in row %}
@@ -87,19 +87,19 @@ function showhidearchived()
 			</div>
 			<!-- <br> -->
 		{% endfor %}
-		
+
 		</div>
-      
+
 
 	  <hr>
-	  
+
 	   <div class="row">
 		<div class="span10">
 			<h1>Archived Projects</h1>
 			<h4>Starting from sixth grade.</h4>
 			<br>
 		</div>
-		
+
 		<div class="span2">
 			<br>
 			<a id="archivedbutton" onclick="showhidearchived()" class="btn btn-large btn-primary">Show Projects</a>
@@ -110,7 +110,7 @@ function showhidearchived()
 
       <!-- Example row of columns -->
 	  <div id="archived" hidden="true">
-      
+
 	{% for row in archived %}
 		<div class="row">
 			{% for project in row %}
@@ -119,12 +119,12 @@ function showhidearchived()
 		</div>
 		<!-- <br> -->
 	{% endfor %}
-	
-	</div>
-	
 
-      
-	  
+	</div>
+
+
+
+
        {% include "footer.html" %}
     </div> <!-- /container -->
 

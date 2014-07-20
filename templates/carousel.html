@@ -1,23 +1,49 @@
-  <!-- Carousel
+<!-- Carousel
 ================================================== -->
-<div id="myCarousel" class="carousel slide">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
   <div class="carousel-inner">
-
-	<div class="item active">
-	  <img src="http://lh4.ggpht.com/_VVFYRNan2Kw/TGbg5aosiiI/AAAAAAAAAZ8/M_JeIb39Cew/s800/voxel.png" alt="">
-	  <div class="container">
-		<div class="carousel-caption">
-		  <h1>Test Carousel</h1>
-		  <p class="lead">Epic Description.</p>
-		  <a class="btn btn-large btn-primary" href="#">View details</a>
-		</div>
-	  </div>
-	</div>
-	
+    <div class="item active" data-image="http://www.varunramesh.net/carousel/raytracercarousel.png">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Redefine space.</h1>
+          <p class="lead">A work-in-progress Real-time, Non-Euclidean Raytracer.</p>
+          <a class="btn btn-large btn-primary" href="/projects/raytracer">View details</a>
+        </div>
+      </div>
+    </div>
+    <div class="item" data-image="http://www.varunramesh.net/carousel/audhumblacarousel.png" alt="Second slide">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Audhumbla</h1>
+          <p class="lead">A bullet hell co-op shooter, based off of Norse mythology.</p>
+          <a class="btn btn-large btn-primary" href="/projects/audhumbla">View details</a>
+        </div>
+      </div>
+    </div>
+    <div class="item" data-image="http://www.varunramesh.net/carousel/masseffectcarousel.png">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Mass Effect Fan-film</h1>
+          <p class="lead">Currently a work-in-progress.</p>
+          <a class="btn btn-large btn-primary" href="/projects/masseffect">View a clip</a>
+        </div>
+      </div>
+    </div>
   </div>
-  
-
-  
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div><!-- /.carousel -->
+
+<script>
+  $(function() {
+    $(".carousel .item").each(function(index) {
+      $(this).css('background-image', "url(" + $(this).attr('data-image') + ")");
+    })
+  })
+</script>

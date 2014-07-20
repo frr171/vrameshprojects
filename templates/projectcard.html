@@ -1,8 +1,9 @@
-<div class="col-md-4">
+<div class="col-sm-4">
+	<div class="card">
 		<a href="{% url 'projects:project' project.name %} "><img style="width:100%"  src="{{ project.thumbnail }}"></a>
-          <h2> {{ project.title }} </h2>
-          <p> {{ project.description }} </p>
-          <p><a class="btn btn-default" href="{% url 'projects:project' project.name %}">View details</a></p>
-		  
-		  <br>
+
+		<h2> {{ project.title }} </h2>
+    <p> {{ project.description }} </p>
+    <p><a class="btn btn-default" href="{% url 'projects:project' project.name %}">View details</a></p>
+	</div>
 </div>
