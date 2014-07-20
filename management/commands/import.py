@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
+from projects.models import *
 
 import urllib2
 from optparse import make_option
@@ -94,3 +95,5 @@ class Command(BaseCommand):
         model.save()
 
       self.stdout.write("Imported lists.\n");
+
+    self.stdout.write("Done importing all resources.\n");
